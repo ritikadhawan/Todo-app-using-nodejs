@@ -6,11 +6,14 @@ const app = express();
 
 const port = 8000;
 
+//static folder is set
+app.use(express.static('./static'));
+
 //body parser for form data
 app.use(express.urlencoded());
+
 // use express router
 app.use('/', require('./routes'));
-
 
 //setting ejs as view engine 
 app.set('view engine','ejs');

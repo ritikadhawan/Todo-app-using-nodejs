@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="/css/layout.css">
     <title>Todo-App</title>
 </head>
 <body>
@@ -35,24 +35,36 @@
 
         </form>
     </div>
+    <div>
+        <button >DELETE TODO</button>
+    </div>
     <div id="display-task">
         <ul>
             <%for(let i of todo_list){%>
                 <li>
-                    <input type="checkbox" >
-                    <span>
+                    <input type="checkbox" name="selected" id="selected_box">
+                    <div>
                         <%= i.description %>
-                    </span>
+                    </div>
                     
-                    <span>
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>
-                            <%= i.due_date %>
-                        </span>
-                    </span>
-                    <span>
+                    <div>
+                         <i class="fas fa-calendar-alt"></i>
+                        <div>
+                            <%=i.due_date.getDate() %>
+                            /
+                            <%=i.due_date.getDay() %>
+                            /
+                            <%=i.due_date.getFullYear()%>
+                        </div>
+                    </div>
+                    <div>
                         <%= i.category %>
-                    </span>
+                    </div>
+                    <div>
+                        <a href="/delete-todo/?id=<%=i._id%>">
+                            <i class = "fas fa-trash-alt"></i>
+                        </a>
+                    </div>
      
                 </li>
             <%}%>

@@ -7,5 +7,7 @@ console.log('home router loaded');
 
 router.get('/', homeController.home);
 router.use('/create-todo',require('./createTodo'));
+router.use('/delete-todo',require('./deleteTodo'));
+
 
 module.exports = router;
