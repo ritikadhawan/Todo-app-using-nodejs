@@ -18,6 +18,8 @@ app.use('/', require('./routes'));
 //setting ejs as view engine 
 app.set('view engine','ejs');
 app.set('views','./views');
+//ejs adds unnecessary white spaces this line removes them
+app.locals.rmWhitespace = true;
 
 //listening to port
 app.listen(port,(err)=>{

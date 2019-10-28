@@ -5,49 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/home.css">
     <title>Todo-App</title>
 </head>
 <body>
+    <h2 id="todo-app-title">TODO-APP</h2>
     <div>
-        <form action="/create-todo" method = "POST">
-            <div>
-                <label for="description">Description</label>
-                <input type="text" name="description" id="description" placeholder="What do you need to do?">
-            </div>
-            <div>
-                <label for="category">Category</label>
-                <select name="category" id="category" >
-                    <option value="none">Choose a category</option>
-                    <option value="personal">Personal</option>
-                    <option value="work">Work</option>
-                    <option value="cleaning">Cleaning</option>
-                    <option value="school">School</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-            <div>
-                <label for="due_date">Due-Date</label>
-                <input type="date" id="due_date" name="due_date">
-            </div>
+        <form action="/create-todo" method = "POST" id="create-todo-form" class="">
+            <!-- <div class="row1"> -->
+                <div class="flex-col border-black">
+                    <label for="description">Description</label>
+                    <input type="text" name="description" id="description" class="border-style-none" placeholder="What do you need to do?">
+                </div>
+                <div class="flex-col border-black">
+                    <label for="category">Category</label>
+                    <select name="category" id="category" class="border-style-none">
+                        <option value="none">Choose a category</option>
+                        <option value="personal">Personal</option>
+                        <option value="work">Work</option>
+                        <option value="cleaning">Cleaning</option>
+                        <option value="school">School</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            <!-- </div> -->
+            <!-- <div class="row2"> -->
+                <div class="flex-col border-black">
+                    <label for="due_date">Due-Date</label>
+                    <input type="date" id="due_date" name="due_date" class="border-style-none">
+                </div>
+                <div class="flex-row" id="add-todo">
+                    <i class="fas fa-plus"></i>
+                    <input type="submit" value="ADD TODO" >
+                </div>
+            <!-- </div> -->
+             
             
-            <input type="submit" value="ADD TASK">
 
         </form>
     </div>
-    <div>
+    <!-- <div>
         <button >DELETE TODO</button>
-    </div>
-    <div id="display-task">
-        <ul>
+    </div> -->
+    <div id="display-todo">
+        <ul class="flex-col">
             <%for(let i of todo_list){%>
-                <li>
-                    <input type="checkbox" name="selected" id="selected_box">
-                    <div>
+                <li class="flex-row">
+<!--                     <input type="checkbox" name="selected" id="selected_box"> -->
+                    <div class="description">
                         <%= i.description %>
                     </div>
                     
-                    <div>
+                    <div class="flex-row due-date">
                          <i class="fas fa-calendar-alt"></i>
                         <div>
                             <%=i.due_date.getDate() %>
@@ -57,16 +66,18 @@
                             <%=i.due_date.getFullYear()%>
                         </div>
                     </div>
-                    <div>
+                    <div class="category">
                         <%= i.category %>
                     </div>
-                    <div>
+                    <div class="flex-row delete-todo">
                         <a href="/delete-todo/?id=<%=i._id%>">
                             <i class = "fas fa-trash-alt"></i>
                         </a>
                     </div>
+                  
      
                 </li>
+
             <%}%>
         </ul>
         

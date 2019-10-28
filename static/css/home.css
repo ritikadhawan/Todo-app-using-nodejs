@@ -1,4 +1,83 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: #c6bfbf;
+}
+#todo-app-title{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #208a10;
+}
+/* create todo form */
+#create-todo-form{
+  margin: 2rem 6rem;
+}
+#create-todo-form div{
+    margin: 1rem;
+}
+
+#add-todo{
+    justify-content: center;
+    align-items: center;
+    padding: 0.4rem;
+    border-radius: 2rem;
+    background-color: #208a10;
+}
+#add-todo input{
+    margin-left: 0.3rem;
+    background-color: inherit;
+    border-style: none;
+}
+.border-black{
+    padding: 1rem;
+    border: 0.06rem solid #000;
+    border-radius: 1rem;
+    background-color: white;
+}
+
+/* todos */
+#display-todo ul{
+    list-style: none;
+    padding: 0;
+}
+
+#display-todo ul li {
+    background-color: #9ad400;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 0.04rem solid #000;
+}
+.description{
+    width: 40%;
+}
+.due-date{
+    width: 7rem;
+    padding: 0;
+    /* margin-right: 2rem; */
+}
+.due-date i{
+    margin-right: 0.5rem;
+}
+.category{
+    width: 4rem;
+    /* margin-right: 0.5rem; */
+}
+.delete-todo a{
+    color: #000;
+}
+
+/* flex direction row class */
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+/* flex direction col class */
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
+.border-style-none{
+    border-style: none;
 }
