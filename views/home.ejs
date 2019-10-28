@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
     <title>Todo-App</title>
 </head>
 <body>
@@ -32,6 +34,30 @@
             <input type="submit" value="ADD TASK">
 
         </form>
+    </div>
+    <div id="display-task">
+        <ul>
+            <%for(let i of todo_list){%>
+                <li>
+                    <input type="checkbox" >
+                    <span>
+                        <%= i.description %>
+                    </span>
+                    
+                    <span>
+                        <i class="fas fa-calender"></i>
+                        <span>
+                            <%= i.due_date %>
+                        </span>
+                    </span>
+                    <span>
+                        <%= i.category %>
+                    </span>
+     
+                </li>
+            <%}%>
+        </ul>
+        
     </div>
     
 </body>
