@@ -1,6 +1,12 @@
 const express = require('express');
+
+const db = require('./config/mongoose');
+const Todo = require('./models/todo');
 const app = express();
+
 const port = 8000;
+
+
 
 app.set('view engine','ejs');
 app.set('views','./views');
