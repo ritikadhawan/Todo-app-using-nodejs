@@ -6,5 +6,6 @@ const homeController = require('../controllers/home_controller');
 console.log('home router loaded');
 
 router.get('/', homeController.home);
-// router.use('/addTodo',require('./addTodo'));
+router.use('/create-todo',require('./createTodo'));
+
 module.exports = router;

@@ -10,7 +10,7 @@
 </head>
 <body>
     <div>
-        <form action="">
+        <form action="/create-todo" method = "POST">
             <div>
                 <label for="description">Description</label>
                 <input type="text" name="description" id="description" placeholder="What do you need to do?">
@@ -45,7 +45,7 @@
                     </span>
                     
                     <span>
-                        <i class="fas fa-calender"></i>
+                        <i class="fas fa-calendar-alt"></i>
                         <span>
                             <%= i.due_date %>
                         </span>

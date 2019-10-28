@@ -1,13 +1,13 @@
-const Todo = require('./models/todo');
+const Todo = require('../models/todo');
 module.exports.home = function(req,res){
 
-    Todo.find({},(err,todos)=>{
+    Todo.find({},function (err,todos){
         if(err){
             console.log(`error in fetching todos`);
             return;
         }
-        res.render('home',{
+        return res.render('home',{
             todo_list: todos
         });
-    })
+    });
 }
