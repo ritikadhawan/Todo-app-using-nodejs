@@ -1,7 +1,6 @@
-console.log('*******script loaded****');
+// function to display selected todo 
 function displaySelectedTodo(element){
-    console.log('hello');
-    document.getElementById('display-selected-todo').innerHTML = element.innerHTML;
+    document.getElementById('display-selected-todo').innerText = element.innerText;
 
 }
 

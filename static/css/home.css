@@ -1,17 +1,31 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: #c6bfbf;
+    background-color: #F1D30C;
+    justify-content: space-around;
+    
 }
+/* three containers in body  */
+body>div{
+    margin-top: 4rem;
+    align-self: center;
+    
+}
+/* todo app heading */
 #todo-app-title{
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: #208a10;
+    background-color: #553B07;
+    color: #fff;
+    position: absolute;
+    width: 100%;
 }
-/* create todo form */
+
+/**create todo form **/
 #create-todo-form{
-  margin: 2rem 6rem;
+    border-right: 0.07rem solid #000;
+    padding-right: 3rem;
 }
 #create-todo-form div{
     margin: 1rem;
@@ -22,11 +36,13 @@ body{
     align-items: center;
     padding: 0.4rem;
     border-radius: 2rem;
-    background-color: #208a10;
+    background-color: #553B07;
+    color: #fff;
 }
 #add-todo input{
     margin-left: 0.3rem;
     background-color: inherit;
+    color: #fff;
     border-style: none;
 }
 .border-black{
@@ -36,37 +52,60 @@ body{
     background-color: white;
 }
 
-/* todos */
+/** todos **/
 #display-todo ul{
     list-style: none;
+    margin: 0;
     padding: 0;
 }
-
+/* displaying every list items */
 #display-todo ul li {
-    background-color: #9ad400;
+    background-color: #fff;
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
     border-bottom: 0.04rem solid #000;
 }
+#display-todo ul li:hover{
+    background-color:rgb(223, 213, 213);
+}
+/* description */
 .description{
-    width: 40%;
+    width: 10rem;
 }
+/* due-date */
 .due-date{
-    width: 7rem;
+    width: 10rem;
     padding: 0;
-    /* margin-right: 2rem; */
 }
+/* calender sign */
 .due-date i{
     margin-right: 0.5rem;
 }
+/* category */
 .category{
     width: 4rem;
-    /* margin-right: 0.5rem; */
 }
 .delete-todo a{
+    margin-left: 0.4rem;
     color: #000;
 }
+
+/** display selected todo section **/
+#display-selected-todo{
+    background-color: #fff;
+    width: 25vw;
+    height: 40vh;
+    border-radius: 2rem;
+    border: 0.08rem solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 2rem;
+    font-weight: 900;
+}
+
+/** utility classes **/
 
 /* flex direction row class */
 .flex-row{

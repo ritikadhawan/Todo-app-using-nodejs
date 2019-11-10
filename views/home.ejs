@@ -9,15 +9,17 @@
     <script type="text/javascript" src="/js/script.js"></script>
     <title>Todo-App</title>
 </head>
-<body>
+<body class="flex-row">
     <h2 id="todo-app-title">TODO-APP</h2>
     <div>
+        <!-- create todo form  -->
         <form action="/create-todo" method = "POST" id="create-todo-form" class="">
-            <!-- <div class="row1"> -->
+            <!-- todo descrition input -->
                 <div class="flex-col border-black">
                     <label for="description">Description</label>
                     <input type="text" name="description" id="description" class="border-style-none" placeholder="What do you need to do?">
                 </div>
+                <!-- todo category input  -->
                 <div class="flex-col border-black">
                     <label for="category">Category</label>
                     <select name="category" id="category" class="border-style-none">
@@ -29,47 +31,47 @@
                         <option value="other">Other</option>
                     </select>
                 </div>
-            <!-- </div> -->
-            <!-- <div class="row2"> -->
+                <!-- due date input  -->
                 <div class="flex-col border-black">
                     <label for="due_date">Due-Date</label>
                     <input type="date" id="due_date" name="due_date" class="border-style-none">
                 </div>
+                <!-- add todo button  -->
                 <div class="flex-row" id="add-todo">
                     <i class="fas fa-plus"></i>
                     <input type="submit" value="ADD TODO" >
                 </div>
-            <!-- </div> -->
-             
             
 
         </form>
     </div>
-  
+  <!-- display todo section  -->
     <div id="display-todo">
         <ul class="flex-col">
            <%for(let i of todo_list){%>
                 
                 <li class="flex-row" onclick="displaySelectedTodo(this)">
                 
-
+                    <!-- display descripition of ith todo  -->
                     <div class="description">
                         <%= i.description %>
                     </div>
-                    
+                    <!-- due date of ith todo  -->
                     <div class="flex-row due-date">
                          <i class="fas fa-calendar-alt"></i>
                         <div>
                             <%=i.due_date.getDate() %>
                             /
-                            <%=i.due_date.getDay() %>
+                            <%=i.due_date.getMonth() +1%>
                             /
                             <%=i.due_date.getFullYear()%>
                         </div>
                     </div>
+                    <!-- display category of ith todo  -->
                     <div class="category">
                         <%= i.category %>
                     </div>
+                    <!-- delete todo button  -->
                     <div class="flex-row delete-todo">
                         <a href="/delete-todo/?id=<%=i._id%>">
                             <i class = "fas fa-trash-alt"></i>
@@ -84,6 +86,7 @@
 
         
     </div>
+    <!-- section to display seclected todo  -->
     <div id="display-selected-todo"></div>
     
 
