@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/home.css">
+    <script type="text/javascript" src="/js/script.js"></script>
     <title>Todo-App</title>
 </head>
 <body>
@@ -44,14 +45,14 @@
 
         </form>
     </div>
-    <!-- <div>
-        <button >DELETE TODO</button>
-    </div> -->
+  
     <div id="display-todo">
         <ul class="flex-col">
-            <%for(let i of todo_list){%>
-                <li class="flex-row">
-<!--                     <input type="checkbox" name="selected" id="selected_box"> -->
+           <%for(let i of todo_list){%>
+                
+                <li class="flex-row" onclick="displaySelectedTodo(this)">
+                
+
                     <div class="description">
                         <%= i.description %>
                     </div>
@@ -80,8 +81,12 @@
 
             <%}%>
         </ul>
+
         
     </div>
+    <div id="display-selected-todo"></div>
+    
+
     
 </body>
 </html>
