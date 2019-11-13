@@ -19,7 +19,7 @@ body{
     height: 10rem;
     background-color: #EFEEEE;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 /* create-todo-form  */
 #create-todo-form{
@@ -141,7 +141,7 @@ body{
     /* display-selected-todo  */
     #display-selected-todo{
         width: 65%;
-        font-size: 0.8rem;
+        font-size: 1.7 rem;
     }
     /* create-todo-form  */
     #create-todo-form{
