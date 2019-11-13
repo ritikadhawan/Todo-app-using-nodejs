@@ -5,6 +5,14 @@ body{
     position: relative;
 }
 /* todo-app-title  */
+#todo-app-title{
+    background-color: #DA2244;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    margin: 0;
+    color: #fff;
+}
 /* display-selected-todo  */
 #display-selected-todo{
     width: 100%;
@@ -25,12 +33,17 @@ body{
     transform: translate(-50%,-50%);
     display: none;
 }
+#close-form{
+    position: absolute;
+    left: 90%;
+    top: 5%;
+}
 
 .input-description input,.input-category select,.input-due-date input{
     background-color: inherit;
     border: none;
 }
-#create-todo-form>div:not(:last-child){
+#create-todo-form>div:not(:nth-child(4)){
     padding: 1rem;
     border-bottom: 0.02rem solid #000;
     width: 50%;
@@ -44,6 +57,7 @@ body{
 #submit-button input{
     background-color: inherit;
     border: none;
+    color: #fff;
 }
 /* add-todo-button  */
 #add-todo-button img{
@@ -118,6 +132,11 @@ body{
 /* mobile first approach  */
 @media only screen and (min-width: 992px){
     /* todo-app-title  */
+    #todo-app-title{
+        margin-top: 2rem;
+        width: 65%;
+        box-sizing: border-box;
+    }
     /* display-selected-todo  */
     #display-selected-todo{
         width: 65%;
@@ -126,7 +145,6 @@ body{
     #create-todo-form{
         width: 30%;
     }
-    /* add-todo-button  */
     /* display-todo section  */
     #display-todo{
         width: 65%;
